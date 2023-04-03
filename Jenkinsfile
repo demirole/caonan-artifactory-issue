@@ -6,6 +6,9 @@ def ref = 'conan-artifactory-issue/1.0.0@user/testing'
 String command
 
 node('Linux') {
+
+    cleanWs()
+
     // Clone the code from github:
     checkout(scm)
 
