@@ -18,7 +18,6 @@ node('Linux') {
     // Create a local build-info instance:
     String conanHome = "${env.WORKSPACE}/conan_home"
     def buildInfo = Artifactory.newBuildInfo()
-    buildInfo.name = "Conan-pipeline"
 
     // Create a conan client instance:
     def conanClient = Artifactory.newConanClient(userHome: conanHome)
