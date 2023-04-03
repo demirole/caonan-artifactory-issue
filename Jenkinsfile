@@ -7,7 +7,7 @@ String command
 
 node('Linux') {
     // Clone the code from github:
-    git url :'https://github.com/demirole/conan-artifactory-issue.git'
+    checkout(scm)
 
     // Obtain an Artifactory server instance, defined in Jenkins --> Manage Jenkins --> Configure System:
     def server = Artifactory.server serverId
