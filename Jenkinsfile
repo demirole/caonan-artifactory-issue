@@ -35,7 +35,7 @@ node('Linux') {
 
     // Create an upload command. The 'serverName' string is used as a conan 'remote', so that
     // the artifacts are uploaded into it:
-    command = "upload * --all -r ${serverName} --confirm"
+    command = "upload * -r ${serverName} --confirm --all --parallel --check --force"
 
     // Run the upload command, with the same build-info instance as an argument:
     conanClient.run(command: command, buildInfo: buildInfo)
