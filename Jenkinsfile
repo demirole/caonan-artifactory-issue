@@ -3,6 +3,7 @@
 def serverId = 'Artifactory'
 def conanStagingRepo = 'lde-conan-staging'
 def ref = 'conan-artifactory-issue/1.0.0@user/testing'
+String command
 
 node('Linux') {
     // Clone the code from github:
@@ -25,12 +26,12 @@ node('Linux') {
     conanClient.run(command: "profile new --detect")
 
     // Run a conan build. The 'buildInfo' instance is passed as an argument to the 'run' method:
-    String command = "create . ${ref} -pr:b default -pr default"
+    command = "create . ${ref} -pr:b default -pr default"
     conanClient.run(command: command, buildInfo: buildInfo)
 
     // Create an upload command. The 'serverName' string is used as a conan 'remote', so that
     // the artifacts are uploaded into it:
-    String command = "upload * --all -r ${serverName} --confirm"
+    command = "upload * --all -r ${serverName} --confirm"
 
     // Run the upload command, with the same build-info instance as an argument:
     conanClient.run(command: command, buildInfo: buildInfo)
