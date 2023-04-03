@@ -8,6 +8,7 @@ String command
 node('Windows') {
 
     cleanWs()
+    env.CONAN_USE_ALWAYS_SHORT_PATHS = 'True'
 
     // Clone the code from github:
     checkout(scm)
