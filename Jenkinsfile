@@ -14,11 +14,11 @@ node('Linux') {
 
     // Create a local build-info instance:
     String conanHome = "${env.WORKSPACE}/conan_home"
-    def buildInfo = Artifactory.newBuildInfo(userHome: conanHome)
+    def buildInfo = Artifactory.newBuildInfo()
     buildInfo.name = "Conan-pipeline"
 
     // Create a conan client instance:
-    def conanClient = Artifactory.newConanClient()
+    def conanClient = Artifactory.newConanClient(userHome: conanHome)
 
     // Add a new repository named 'conan-local' to the conan client.
     // The 'remote.add' method returns a 'serverName' string, which is used later in the script:
