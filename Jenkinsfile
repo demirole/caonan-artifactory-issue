@@ -31,6 +31,7 @@ node('Linux') {
     // Run a conan build. The 'buildInfo' instance is passed as an argument to the 'run' method:
     command = "create . ${ref} -pr:b default -pr default"
     conanClient.run(command: command, buildInfo: buildInfo)
+    buildInfo.env.collect()
 
     // Create an upload command. The 'serverName' string is used as a conan 'remote', so that
     // the artifacts are uploaded into it:
