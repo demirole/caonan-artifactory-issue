@@ -1,6 +1,6 @@
 // https://github.com/jfrog/project-examples/blob/master/jenkins-examples/pipeline-examples/scripted-examples/conan-example/Jenkinsfile
 
-def serverId = 'Artifactory'
+def serverId = 'Artifactory-Prod'
 def conanStagingRepo = 'lde-conan-staging'
 def ref = 'conan-artifactory-issue/1.0.0@user/testing'
 String command
