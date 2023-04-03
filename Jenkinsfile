@@ -26,7 +26,7 @@ node('Linux') {
     // Add a new repository named 'conan-local' to the conan client.
     // The 'remote.add' method returns a 'serverName' string, which is used later in the script:
     String serverName = conanClient.remote.add server: server, repo: conanStagingRepo
-    conanClient.run(command: "profile new --detect")
+    conanClient.run(command: "profile new --detect default")
 
     // Run a conan build. The 'buildInfo' instance is passed as an argument to the 'run' method:
     command = "create . ${ref} -pr:b default -pr default"
