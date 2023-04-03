@@ -5,7 +5,7 @@ def conanStagingRepo = 'lde-conan-staging'
 def ref = 'conan-artifactory-issue/1.0.0@user/testing'
 String command
 
-node('Linux') {
+node('Windows') {
 
     cleanWs()
 
